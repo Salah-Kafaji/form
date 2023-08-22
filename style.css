@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'vazirmatin';
+    direction: rtl;
 }
 
 .contaner {
@@ -29,7 +30,7 @@
     height: 100vh;
     padding: 0 50px;
     color: #fff;
-
+    position: relative;
 }
 
 .pages {
@@ -56,10 +57,22 @@
 .sub-title ul{
     padding: 0px;
     margin: auto;
+    position: relative;
 }
 
 .sub-title li{
+    list-style: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    opacity: 0;
+    transition: all 0.3s;
+}
 
+.show_sub_title{
+    opacity: 1!important;
 }
 
 .description {
@@ -69,7 +82,7 @@
 .logo {
     margin: 10% 0;
 }
-button {
+.first_next {
     outline: 0;
     border: 0;
     height: 56px;
@@ -83,6 +96,22 @@ button span {
     padding: 0 5px;
     font-size: 16px;
 }
+
+.next_to_start {
+    outline: 0;
+    border: 0;
+    height: 56px;
+    width: 100%;
+    border-radius: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0pc;
+    right: 0px;
+    left: 0px;
+    background-color: #E5DA9A;
+}
+ 
+
 .circle svg{
     fill:white;
     width: 100%;
@@ -167,10 +196,74 @@ button span {
     list-style: none;
     width: 100%;
     height: 100%;
+    direction: ltr;
 }
 
 .Main_logo li img{
     width: 100%;
     right: 100%;
+}
+
+.personal_info_forma{
+    height: 72vh;
+    width: 90%;
+    position: absolute;
+    top: 210px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    display: none;
+    font-size: 0px;
+    max-width: 400px;
+}
+
+.info_form_input_CC{
+    background-color:#2F3A4F;
+
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.info_form_input{
+    font-size: 20px;
+    background-color: rgba(0,0,0,0);
+    color: #E5DA9A;
+    border: 0px;
+    width: 92%;
+    height: 65px;
+    font-weight: bold;
+}
+
+.info_form_input option{
+    color: black;
+}
+
+.info_form_input::-webkit-outer-spin-button,
+.info_form_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.info_form_input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.half_input{
+    width: calc(50% - 8px);
+    display: inline-block;
+}
+
+.left_margin{
+    margin-left: 16px;
+}
+
+.Evaluation-content{
+    display: none;
+    width: 90%;
+    max-width: 400px;
+    height: 250px;
+    background-color: #1a2334;
 }
 
