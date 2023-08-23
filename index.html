@@ -340,8 +340,10 @@
                             <li>
                                 <img class="Main_logo" src="assets/images/iahs-White.png" alt="">
                             </li>
+                            <li>
+                                <img class="Main_logo" src="assets/images/iahs-White.png" alt="">
+                            </li>
                         </ul>
-                        
                     </div> 
                     <div class="circle">
                         <!-- <img src="assets/images/circlea.svg" alt="logo"> -->
@@ -361,7 +363,23 @@
                     </div>
                 </div>
                 <div class="Evaluation-content">
+                    
+                    <ul class="Evaluation-buttons" >
+                        <li >
+                            <p></p>
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                            <button>7</button>
+                            <button>8</button>
+                            <button>9</button>
+                            <button>10</button>
+                        </li>
 
+                    </ul>
                 </div>
                 <div class="description" >
                     تسعى العتبة العلوية المقدسة من خلال هذه الاستبانة الوقوف علي
@@ -377,6 +395,10 @@
                         <img src="assets/images/chevron.svg" alt="next">
                         <span> التالي </span>
                     </button>
+                    <button class="secont_next" >
+                        <img src="assets/images/chevron.svg" alt="next">
+                        <span> التالي </span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -388,7 +410,7 @@
                 $(".first_next").fadeOut(300);
                 $(".description").fadeOut(300);
                 $(".loader_CC").fadeOut(300,function(){
-                    $('.personal_info_forma').fadeIn(300);
+                    $('.personal_info_forma').fadeIn(300); 
                     $('.sub-title li').eq(1).addClass('show_sub_title');
                 });
         });
@@ -396,12 +418,25 @@
 		$(".next_to_start").click(function(){
             $('.sub-title li').removeClass('show_sub_title');
             $(".personal_info_forma").fadeOut(300,function(){
-                $(".loader_CC").fadeIn(300);
+                $(".loader_CC").attr('style',''); 
+
+                // $(".loader_CC").hide().fadeIn(300);
                 $(".Evaluation-content").fadeIn(300);
+                $(".secont_next").fadeIn(300);
                 $('.sub-title li').eq(2).addClass('show_sub_title');
             });
         });
-
-
+        $(".Evaluation-buttons button").click(function(){
+            $(".Evaluation-buttons button").removeClass('button-not-checked');
+            $(".Evaluation-buttons button").removeClass('button-checked');
+            $(this).addClass('button-checked');
+            var thisIndex = $(this).index();
+            var thisParent = $(this).parent();
+            for(i=0 ;i < thisIndex;i++){
+                thisParent.find('button').eq(i).addClass('button-not-checked');
+            };
+            
+        });
+        
     </script>
 </html>
