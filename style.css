@@ -210,12 +210,25 @@ button span {
     width: 100%;
     height: 100%;
     direction: ltr;
+    display: none;
 }
 
 .Main_logo li img{
     width: 100%;
-    right: 100%;
+    right: 0%;
 }
+
+.Main_logo li svg{
+    width: 72%;
+    right: 0%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    fill: #fff;
+}
+
 
 .personal_info_forma{
     height: 72vh;
@@ -248,6 +261,16 @@ button span {
     font-weight: bold;
 }
 
+.info_form_textarea{
+    font-size: 20px;
+    background-color: rgba(0,0,0,0);
+    color: #E5DA9A;
+    border: 0px;
+    width: 100%;
+    height: 25vh;
+}
+
+
 .info_form_input option{
     color: black;
 }
@@ -278,13 +301,18 @@ button span {
 }
 
 .Evaluation-buttons li p{
-    position: relative;
-    
+    position: absolute;
+    top: -70px;
+    right: 0px;
+    left:0px;
+    margin: auto;
+    font-size: 18px;
 }
 
 .Evaluation-buttons li{
     list-style: none;
     position: relative;
+    display: none;
 }
 
 .Evaluation-buttons button{
