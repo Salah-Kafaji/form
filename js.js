@@ -1,6 +1,5 @@
 var steps = 0;
 var next_steps = 0;
-$(".progress-bar").loading();
 $('.Main_logo li').eq(0).fadeIn(300)
 
 $(".first_next").click(function(){
@@ -28,6 +27,7 @@ $(".next_to_start").click(function(){
         
     });
 });
+
 $(".Evaluation-buttons button").click(function(){
     $(".Evaluation-buttons button").removeClass('button-not-checked');
     $(".Evaluation-buttons button").removeClass('button-checked');
@@ -38,19 +38,30 @@ $(".Evaluation-buttons button").click(function(){
     for(i=0 ;i < thisIndex;i++){
         thisParent.find('button').eq(i).addClass('button-not-checked');
     };
-    
 });
 
 
 $(".secont_next").click(function(){
     next_steps++;
-    steps=steps+20;
+    $('.progress-circle').removeClass("p"+steps+"");
+    steps=steps+9;
+    if(steps >= 50){
+        $('.progress-circle').addClass("over50");
+    }
+    if(steps == 90){
+        steps++; 
+        
+        $('.secont_next').fadeOut(300,function(){
+            $('.send-info').fadeIn(300);
+        });
+        
+    }
     $('.Main_logo li').fadeOut(300);
       $('.Evaluation-buttons li').fadeOut(300,function(){
         $('.Evaluation-buttons li').eq(next_steps).fadeIn(300);
+        $('.progress-circle').addClass("p"+steps+"");
         $('.Main_logo li').eq(next_steps + 1).fadeIn(300);
-
-        $('.progress-bar').attr('data-percent', steps);
-        $('.progress-bar').loading();
     });
+
 });
+

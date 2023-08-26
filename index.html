@@ -9,7 +9,8 @@
         <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="jQuery-plugin-progressbar.css">
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="jQuery-plugin-progressbar.js"></script>
+        <!-- <script src="jQuery-plugin-progressbar.js"></script> -->
+        <link rel="stylesheet" href="css-circular-prog-bar.css">
         <link rel="stylesheet" href="style.css">
 
     </head>
@@ -29,10 +30,11 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="personal_info_forma">
                     <!-- Country names and Country Code -->
-                    <div class="info_form_input_CC">
-                        <select class="form-select info_form_input" id="country" name="country">
+                    <div  class="info_form_input_CC">
+                        <select id="country-id" class="form-select info_form_input" id="country" name="country">
                             <option value="">الدولة</option>
                             <option value="IQ">العراق</option>
                             <option value="LB">لبنان</option>
@@ -294,22 +296,22 @@
                     </div>
 
                     <div class="info_form_input_CC">
-                        <input class="info_form_input" type="text" placeholder="المحافظة او المدينة ">
+                        <input id="city-id" class="info_form_input" type="text" placeholder="المحافظة او المدينة ">
                     </div>
                     <div class="info_form_input_CC half_input left_margin">
-                        <input class="info_form_input" type="number" placeholder=" العمر ">
+                        <input id="age" class="info_form_input" type="number" placeholder=" العمر ">
                     </div>
 
                     <div class="info_form_input_CC half_input ">
-                        <select class="info_form_input" >
+                        <select id="gender" class="info_form_input" >
                             <option value="">الجنس</option>
                             <option value="1">ذكر</option>
                             <option value="0">انثى</option>
                         </select>
                     </div>
-
+    
                     <div class="info_form_input_CC ">
-                        <select class="info_form_input" >
+                        <select id="certificate-id" class="info_form_input" >
                             <option value="">التحصيل الدراسي</option>
                             <option value="1">ابتدائي</option>
                             <option value="2">متوسط</option>
@@ -321,10 +323,10 @@
                     </div>
 
                     <div class="info_form_input_CC">
-                        <input class="info_form_input" type="text" placeholder=" الحالة الاجتماعية ">
+                        <input id="married-id" class="info_form_input" type="text" placeholder=" الحالة الاجتماعية ">
                     </div>
                     <div class="info_form_input_CC">
-                        <input class="info_form_input" type="number" placeholder=" رقم الهاتف ">
+                        <input id="phoneNo-id" class="info_form_input" type="number" placeholder=" رقم الهاتف ">
                     </div>
 
                     <button class="next_to_start">
@@ -335,7 +337,14 @@
 
                 <div class="loader_CC">   
                     <div class="loader_containt">
-                        <div class="progress-bar position" data-percent="50" data-duration="1000" data-color="#3E475A,#E5DA9A"></div>
+                        <div class="progress-circle ">
+                            <span></span>
+                            <div class="left-half-clipper">
+                               <div class="first50-bar"></div>
+                               <div class="value-bar"></div>
+                            </div>
+                         </div>
+                         
                         <ul class="Main_logo" >
                             <li>
                                 <img class="Main_logo" src="assets/images/iahs-White.png" alt="">
@@ -590,7 +599,7 @@
                             <p>  اي ملاحظات او مقترحات تود اضافتها </p>
                                 <div class="info_form_input_CC">
                                     
-                                    <textarea class="info_form_textarea" rows="5"></textarea>
+                                    <textarea id="notes-id" class="info_form_textarea" ></textarea>
                                 </div>
                             </li>
 
@@ -614,12 +623,53 @@
                         <img src="assets/images/chevron.svg" alt="next">
                         <span> التالي </span>
                     </button>
+                    <button class="send-info" >
+                        <img src="assets/images/chevron.svg" alt="next">
+                        <span> ارسال </span>
+                    </button>
                 </div>
             </div>
         </div>
     </body>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
     <script src="js.js"></script>
-    <script type="text/javascript">
-       
+    <script >
+        $('.send-info').click(function(){
+            $.ajax({
+                url: "https://www.imamali.net/surveys/API/add",
+                method: "POST",
+            
+                    data: {
+                        country: $('#country-id').val(),
+                        city: $('#city-id').val(),
+                        gender: $('#gender-id').val(),
+                        certificate: $('#certificate-id').val(),
+                        married: $('#married-id').val(),
+                        phoneNo: $('#phoneNo-id').val(),
+                        age: $('#age-id').val(),
+                        q1: $('.Evaluation-buttons li').eq(0).attr('data-eval'),
+                        q2: $('.Evaluation-buttons li').eq(1).attr('data-eval'),
+                        q3: $('.Evaluation-buttons li').eq(2).attr('data-eval'),
+                        q4: $('.Evaluation-buttons li').eq(3).attr('data-eval'),
+                        q5: $('.Evaluation-buttons li').eq(4).attr('data-eval'),
+                        q6: $('.Evaluation-buttons li').eq(5).attr('data-eval'),
+                        q7: $('.Evaluation-buttons li').eq(6).attr('data-eval'),
+                        q8: $('.Evaluation-buttons li').eq(7).attr('data-eval'),
+                        q9: $('.Evaluation-buttons li').eq(8).attr('data-eval'),
+                        q10: $('.Evaluation-buttons li').eq(9).attr('data-eval'),
+                        notes: $('#notes-id').val(),
+                    }, 
+                  
+                    success: function (data, status, jqXHR) {
+                        alert('success');
+                    },
+                    error: function (jqXHR, status) {
+                        // error handler
+                        console.log(jqXHR);
+                        alert('fail -> ' + status.code);
+                    }
+                });
+            });
     </script>
 </html>

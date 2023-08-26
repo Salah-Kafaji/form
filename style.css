@@ -104,6 +104,18 @@
     display: none;
 }
 
+.send-info{
+    outline: 0;
+    border: 0;
+    height: 56px;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    display: none;
+    background-color: #E5DA9A;
+}
+
 button span {
     color: #1B263B;
     padding: 0 5px;
@@ -267,7 +279,7 @@ button span {
     color: #E5DA9A;
     border: 0px;
     width: 100%;
-    height: 25vh;
+    height: 20vh;
 }
 
 
@@ -300,6 +312,12 @@ button span {
     width: 100%;
 }
 
+.Evaluation-buttons{
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
 .Evaluation-buttons li p{
     position: absolute;
     top: -70px;
@@ -311,8 +329,13 @@ button span {
 
 .Evaluation-buttons li{
     list-style: none;
-    position: relative;
+    position: absolute;
     display: none;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    margin: auto;
 }
 
 .Evaluation-buttons button{
