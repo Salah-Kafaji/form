@@ -48,20 +48,21 @@ $(".secont_next").click(function(){
     if(steps >= 50){
         $('.progress-circle').addClass("over50");
     }
-    if(steps == 90){
-        steps++; 
-        
-        $('.secont_next').fadeOut(300,function(){
-            $('.send-info').fadeIn(300);
-        });
-        
+    if(steps < 100){
+        if(steps == 90){
+            steps++;
+            $('.secont_next').fadeOut(300,function(){
+                $('.send-info').fadeIn(300);
+            });
+            
+        }
+        $('.Main_logo li').fadeOut(300);
+        $('.Evaluation-buttons li').fadeOut(300,function(){
+          $('.Evaluation-buttons li').eq(next_steps).fadeIn(300);
+          $('.progress-circle').addClass("p"+steps+"");
+          $('.Main_logo li').eq(next_steps + 1).fadeIn(300);
+      });
     }
-    $('.Main_logo li').fadeOut(300);
-      $('.Evaluation-buttons li').fadeOut(300,function(){
-        $('.Evaluation-buttons li').eq(next_steps).fadeIn(300);
-        $('.progress-circle').addClass("p"+steps+"");
-        $('.Main_logo li').eq(next_steps + 1).fadeIn(300);
-    });
 
 });
 

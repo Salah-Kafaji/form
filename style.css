@@ -142,6 +142,13 @@ button span {
     width: 100%;
     opacity: 0.3;
     transform: rotate(14deg);
+    transition: all 0.3s;
+}
+
+.circlea-img svg{
+    fill:#E5DA9A!important;
+    opacity: 1!important;
+
 }
 .loader_CC{
     width: 200px;
@@ -257,10 +264,16 @@ button span {
 
 .info_form_input_CC{
     background-color:#2F3A4F;
-
     overflow: hidden;
     border-radius: 16px;
     margin-bottom: 16px;
+    transition: all 0.3s;
+    max-height: 400px;
+}
+
+
+.info_form_input_close{
+    max-height: 0px;
 }
 
 .info_form_input{
@@ -316,6 +329,12 @@ button span {
     position: relative;
     width: 100%;
     height: 150px;
+    max-height: 200px;
+    transition: all 0.3s;
+}
+
+.Evaluation-close{
+    max-height: 0px;
 }
 
 .Evaluation-buttons li p{
@@ -325,6 +344,10 @@ button span {
     left:0px;
     margin: auto;
     font-size: 18px;
+}
+
+.Evaluation-close li p{
+    top: -110px!important;
 }
 
 .Evaluation-buttons li{

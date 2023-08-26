@@ -309,7 +309,6 @@
                             <option value="0">انثى</option>
                         </select>
                     </div>
-    
                     <div class="info_form_input_CC ">
                         <select id="certificate-id" class="info_form_input" >
                             <option value="">التحصيل الدراسي</option>
@@ -317,6 +316,7 @@
                             <option value="2">متوسط</option>
                             <option value="3">اعدادي</option>
                             <option value="4">بكلوريوس</option>
+                            <option value="4">ماجستير</option>
                             <option value="5">دبلوم</option>
                             <option value="6">دكتورا</option>
                         </select>
@@ -447,8 +447,7 @@
                     </div> 
                     <div class="circle">
                         <!-- <img src="assets/images/circlea.svg" alt="logo"> -->
-                        <?xml version="1.0" encoding="UTF-8"?>
-                        <svg  id="b" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1285.36 1294.73">
+                        <svg  class="circlea-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1285.36 1294.73">
                         <defs>
                             <style>
                             .cls-1 {
@@ -465,7 +464,7 @@
                 <div class="Evaluation-content">
                     
                     <ul class="Evaluation-buttons" >
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p>وفرة وجبات الطعام المجهزة للزائرين</p>
                             <button>1</button>
                             <button>2</button>
@@ -478,7 +477,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p>نظافة الحمامات والمرافق وتوفر اللوازم الصحية فيها </p>
                             <button>1</button>
                             <button>2</button>
@@ -491,7 +490,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p> وفرة مراكز الارشاد </p>
                             <button>1</button>
                             <button>2</button>
@@ -504,7 +503,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p> الشعور العالي بالأمان في محيط و داخل المرقد الشريف </p>
                             <button>1</button>
                             <button>2</button>
@@ -517,7 +516,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p> انسيابية الحركة داخل الصحن و الضريح المبارك  </p>
                             <button>1</button>
                             <button>2</button>
@@ -530,7 +529,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p> تعامل كوادر العتبة مع الزائرين     </p>
                             <button>1</button>
                             <button>2</button>
@@ -543,7 +542,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p> وفرة الحمامات و المرافق الصحية </p>
                             <button>1</button>
                             <button>2</button>
@@ -556,7 +555,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p>   وفرة و وضوح علامات الدلالة الخاصة بمشواقع العتبة     </p>
                             <button>1</button>
                             <button>2</button> 
@@ -569,7 +568,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p>   جودة الأطعمة من حيث المذاق و النظافة و الترتيب                            </p>
                             <button>1</button>
                             <button>2</button> 
@@ -582,7 +581,7 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p>   المستوى العام للخدمات المقدمة    </p>
                             <button>1</button>
                             <button>2</button> 
@@ -595,13 +594,19 @@
                             <button>9</button>
                             <button>10</button>
                         </li>
-                        <li data-eval="" >
+                        <li data-eval="0" >
                             <p>  اي ملاحظات او مقترحات تود اضافتها </p>
                                 <div class="info_form_input_CC">
                                     
                                     <textarea id="notes-id" class="info_form_textarea" ></textarea>
                                 </div>
-                            </li>
+                        </li>
+                        <li data-eval="0" >
+                            <p> شكرا لتقييمك للخدمات المقدمة من العتبة العلوية المقدسة </p>
+                                <div class="info_form_input_CC">
+                                    
+                                </div>
+                        </li>
 
                     </ul>
                 </div>
@@ -636,11 +641,7 @@
     <script src="js.js"></script>
     <script >
         $('.send-info').click(function(){
-            $.ajax({
-                url: "https://www.imamali.net/surveys/API/add",
-                method: "POST",
-            
-                    data: {
+            var muDate = {
                         country: $('#country-id').val(),
                         city: $('#city-id').val(),
                         gender: $('#gender-id').val(),
@@ -659,15 +660,30 @@
                         q9: $('.Evaluation-buttons li').eq(8).attr('data-eval'),
                         q10: $('.Evaluation-buttons li').eq(9).attr('data-eval'),
                         notes: $('#notes-id').val(),
-                    }, 
-                  
+                    }
+                    const obj = JSON.stringify(muDate);
+            $.ajax({
+                url: "https://www.imamali.net/surveys/API/add",
+                method: "POST",
+                    data: obj,
                     success: function (data, status, jqXHR) {
-                        alert('success');
+                        $('.send-info').fadeOut(300);
+                        $('.progress-circle').addClass("p100");
+                        $('.info_form_input_CC').addClass("info_form_input_close");
+                        $('.circle').addClass("circlea-img");
+                        $('.Evaluation-buttons').addClass("Evaluation-close");
+                        $('.Main_logo li').fadeOut(300);
+                        $('.Main_logo li').eq(12).fadeIn(300);
+                        $('.Evaluation-buttons li button').fadeOut(300);
+                        $('.sub-title li').fadeOut(300);
+                        $('.Evaluation-buttons li').fadeOut(300);
+                        $('.Evaluation-buttons li').eq(11).fadeIn(300);
+
                     },
                     error: function (jqXHR, status) {
                         // error handler
-                        console.log(jqXHR);
-                        alert('fail -> ' + status.code);
+                        // console.log(jqXHR);
+                        // alert('fail -> ' + status.code);
                     }
                 });
             });
