@@ -13,6 +13,41 @@ $(".first_next").click(function(){
 });
 
 $(".next_to_start").click(function(){
+    var validation = false;
+    alert(validation);
+    $('SH-validate').removeClass('SH-validate');
+    if($('#country-id').val().trim() == ""){
+        $('#country-id').parent().addClass('SH-validate');
+        validation = true;
+    }
+    if($('#city-id').val().trim() == ""){
+        $('#city-id').parent().addClass('SH-validate');
+        validation = true;
+    }
+    if($('#age-id').val().trim() == ""){
+        $('#age-id').parent().addClass('SH-validate');
+        validation = true;
+    }
+
+    if($('#gender-id').val().trim() == ""){
+        $('#gender-id').parent().addClass('SH-validate');
+        validation = true;
+    }
+    if($('#certificate-id').val().trim() == ""){
+        $('#certificate-id').parent().addClass('SH-validate');
+        validation = true;
+    }
+
+    if($('#married-id').val().trim() == ""){
+        $('#married-id').parent().addClass('SH-validate');
+        validation = true;
+    }
+    alert(validation);
+
+    if(validation){
+        return false;
+    }
+
     $('.sub-title li').removeClass('show_sub_title');
     $('.Main_logo li').fadeOut(300)
 

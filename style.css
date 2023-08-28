@@ -383,3 +383,22 @@ button span {
     background-color:#E5DA9A!important;
     color: #1B263B!important;
 }
+
+.SH-validate{
+    border: 2px solid #822222;
+    color: #8a1111;
+    position: relative;
+    overflow: unset;
+}
+
+.SH-validate::before{
+    content:"*";
+    position: absolute;
+    top: -14px;
+    right: -17px;
+    font-size: 32px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: #d02121;
+}

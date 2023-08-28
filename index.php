@@ -299,26 +299,26 @@
                         <input id="city-id" class="info_form_input" type="text" placeholder="المحافظة او المدينة ">
                     </div>
                     <div class="info_form_input_CC half_input left_margin">
-                        <input id="age" class="info_form_input" type="number" placeholder=" العمر ">
+                        <input id="age-id" class="info_form_input" type="number" placeholder=" العمر ">
                     </div>
 
                     <div class="info_form_input_CC half_input ">
-                        <select id="gender" class="info_form_input" >
-                            <option value="">الجنس</option>
+                        <select id="gender-id" class="info_form_input" >
+                            <option value=" ">الجنس</option>
                             <option value="1">ذكر</option>
                             <option value="0">انثى</option>
                         </select>
                     </div>
                     <div class="info_form_input_CC ">
                         <select id="certificate-id" class="info_form_input" >
-                            <option value="">التحصيل الدراسي</option>
+                            <option value=" ">التحصيل الدراسي</option>
                             <option value="1">ابتدائي</option>
                             <option value="2">متوسط</option>
                             <option value="3">اعدادي</option>
+                            <option value="5">دبلوم</option>
                             <option value="4">بكلوريوس</option>
                             <option value="4">ماجستير</option>
-                            <option value="5">دبلوم</option>
-                            <option value="6">دكتورا</option>
+                            <option value="6">دكتوراه</option>
                         </select>
                     </div>
 
@@ -326,7 +326,7 @@
                         <input id="married-id" class="info_form_input" type="text" placeholder=" الحالة الاجتماعية ">
                     </div>
                     <div class="info_form_input_CC">
-                        <input id="phoneNo-id" class="info_form_input" type="number" placeholder=" رقم الهاتف ">
+                        <input id="phoneNo-id" class="info_form_input" type="number" placeholder="  رقم الهاتف (اختياري) ">
                     </div>
 
                     <button class="next_to_start">
@@ -556,7 +556,7 @@
                             <button>10</button>
                         </li>
                         <li data-eval="0" >
-                            <p>   وفرة و وضوح علامات الدلالة الخاصة بمشواقع العتبة     </p>
+                            <p>   وفرة و وضوح علامات الدلالة الخاصة بمواقع العتبة     </p>
                             <button>1</button>
                             <button>2</button> 
                             <button>3</button>
@@ -640,6 +640,7 @@
 
     <script src="js.js"></script>
     <script >
+
         $('.send-info').click(function(){
             var muDate = {
                         country: $('#country-id').val(),
