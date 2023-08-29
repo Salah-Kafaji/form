@@ -269,6 +269,7 @@ button span {
     margin-bottom: 16px;
     transition: all 0.3s;
     max-height: 400px;
+    vertical-align: top;
 }
 
 

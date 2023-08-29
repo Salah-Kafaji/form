@@ -11,10 +11,10 @@ $(".first_next").click(function(){
             $('.sub-title li').eq(1).addClass('show_sub_title');
         });
 });
+    var validation = false;
 
 $(".next_to_start").click(function(){
-    var validation = false;
-    alert(validation);
+    validation = false;
     $('SH-validate').removeClass('SH-validate');
     if($('#country-id').val().trim() == ""){
         $('#country-id').parent().addClass('SH-validate');
@@ -42,12 +42,10 @@ $(".next_to_start").click(function(){
         $('#married-id').parent().addClass('SH-validate');
         validation = true;
     }
-    alert(validation);
 
     if(validation){
         return false;
     }
-
     $('.sub-title li').removeClass('show_sub_title');
     $('.Main_logo li').fadeOut(300)
 
@@ -59,7 +57,6 @@ $(".next_to_start").click(function(){
         $('.sub-title li').eq(2).addClass('show_sub_title');
         $('.Evaluation-buttons li').eq(0).fadeIn(300)
         $('.Main_logo li').eq(1).fadeIn(300)
-        
     });
 });
 

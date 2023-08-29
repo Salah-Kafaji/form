@@ -322,9 +322,17 @@
                         </select>
                     </div>
 
-                    <div class="info_form_input_CC">
-                        <input id="married-id" class="info_form_input" type="text" placeholder=" الحالة الاجتماعية ">
+                    <div class="info_form_input_CC ">
+                        <select id="married-id" class="info_form_input" >
+                        <option value="">الحالة الاجتماعية</option>
+                        <option value="1">متزوج\ة</option>
+                        <option value="">اعزب\عزباء</option>
+                        <option value="">ارمل\ة</option>
+                        <option value="">مطلق\ة</option>
+                        <option value="">اخر</option>
+                        </select>
                     </div>
+
                     <div class="info_form_input_CC">
                         <input id="phoneNo-id" class="info_form_input" type="number" placeholder="  رقم الهاتف (اختياري) ">
                     </div>
